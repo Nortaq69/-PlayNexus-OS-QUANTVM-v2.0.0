@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>PlayNexus // OS:QUANTVM</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="quantum-interface">
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas" class="particle-background"></canvas>
+    
+    <!-- Ripple Container -->
+    <div id="ripple-container" class="ripple-container"></div>
+    
+    <!-- Main Interface -->
+    <div class="quantum-container">
+        <!-- Header Bar -->
+        <header class="quantum-header">
+            <div class="header-left">
+                <div class="quantvm-avatar">
+                    <div class="avatar-core"></div>
+                    <div class="avatar-pulse"></div>
+                </div>
+                <div class="system-title">
+                                            <h1 class="title-main">PlayNexus</h1>
+                    <p class="title-subtitle">// OS:QUANTVM v2.0.0</p>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="system-status">
+                    <div class="status-indicator online"></div>
+                    <span class="status-text">QUANTUM CORE ONLINE</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="theme-selector">
+                    <select id="theme-select" class="quantum-select">
+                        <option value="synthwave">Synthwave</option>
+                        <option value="carbon-ice">Carbon Ice</option>
+                        <option value="red-rain">Red Rain</option>
+                        <option value="memory-leak">Memory Leak</option>
+                        <option value="ancient-quantum">Ancient Quantum</option>
+                    </select>
+                </div>
+                <div class="mode-selector">
+                    <select id="mode-select" class="quantum-select">
+                        <option value="hacker-lair">Hacker Lair</option>
+                        <option value="ghost-temple">Ghost Temple</option>
+                        <option value="singularity-core">Singularity Core</option>
+                        <option value="neon-jungle">Neon Jungle</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="quantum-main">
+            <!-- Sidebar Navigation -->
+            <nav class="quantum-sidebar">
+                <div class="nav-section">
+                    <h3 class="nav-title">🧠 QUANTVM</h3>
+                    <ul class="nav-list">
+                        <li><button class="nav-item active" data-panel="dashboard">
+                            <span class="nav-icon">📊</span>
+                            <span class="nav-text">Dashboard</span>
+                        </button></li>
+                        <li><button class="nav-item" data-panel="biome">
+                            <span class="nav-icon">🌿</span>
+                            <span class="nav-text">File Biome</span>
+                        </button></li>
+                        <li><button class="nav-item" data-panel="organizer">
+                            <span class="nav-icon">📁</span>
+                            <span class="nav-text">Organizer</span>
+                        </button></li>
+                        <li><button class="nav-item" data-panel="security">
+                            <span class="nav-icon">🛡️</span>
+                            <span class="nav-text">Security</span>
+                        </button></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-title">⚡ QUICK ACTIONS</h3>
+                    <ul class="nav-list">
+                        <li><button class="nav-item action-btn" id="quick-scan">
+                            <span class="nav-icon">🔍</span>
+                            <span class="nav-text">Quick Scan</span>
+                        </button></li>
+                        <li><button class="nav-item action-btn" id="auto-organize">
+                            <span class="nav-icon">🧹</span>
+                            <span class="nav-text">Auto Organize</span>
+                        </button></li>
+                        <li><button class="nav-item action-btn" id="security-check">
+                            <span class="nav-icon">🔒</span>
+                            <span class="nav-text">Security Check</span>
+                        </button></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Content Panels -->
+            <div class="content-area">
+                <!-- Dashboard Panel -->
+                <div class="content-panel active" id="dashboard-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">📊 System Dashboard</h2>
+                        <div class="panel-actions">
+                            <button class="quantum-btn refresh-btn" id="refresh-dashboard">
+                                <span class="btn-icon">🔄</span>
+                                <span class="btn-text">Refresh</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <!-- System Health Card -->
+                        <div class="quantum-card health-card">
+                            <div class="card-header">
+                                <h3 class="card-title">System Health</h3>
+                                <div class="card-icon">💚</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="health-meter">
+                                    <div class="meter-bar">
+                                        <div class="meter-fill" id="health-fill"></div>
+                                    </div>
+                                    <span class="meter-value" id="health-value">100%</span>
+                                </div>
+                                <div class="health-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Files</span>
+                                        <span class="stat-value" id="total-files">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Size</span>
+                                        <span class="stat-value" id="total-size">0 MB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Entropy Monitor Card -->
+                        <div class="quantum-card entropy-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Entropy Level</h3>
+                                <div class="card-icon">🌪️</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="entropy-visual">
+                                    <div class="entropy-circle">
+                                        <svg class="entropy-svg" viewBox="0 0 100 100">
+                                            <circle class="entropy-bg" cx="50" cy="50" r="40"></circle>
+                                            <circle class="entropy-fill" cx="50" cy="50" r="40" id="entropy-fill"></circle>
+                                        </svg>
+                                        <span class="entropy-value" id="entropy-value">0%</span>
+                                    </div>
+                                </div>
+                                <div class="entropy-status" id="entropy-status">System Optimal</div>
+                            </div>
+                        </div>
+
+                        <!-- QUANTVM Status Card -->
+                        <div class="quantum-card quantvm-card">
+                            <div class="card-header">
+                                <h3 class="card-title">QUANTVM Status</h3>
+                                <div class="card-icon">🧠</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="quantvm-status">
+                                    <div class="status-item">
+                                        <span class="status-label">Memory</span>
+                                        <span class="status-value" id="quantvm-memory">Loaded</span>
+                                    </div>
+                                    <div class="status-item">
+                                        <span class="status-label">Learning</span>
+                                        <span class="status-value" id="quantvm-learning">Active</span>
+                                    </div>
+                                    <div class="status-item">
+                                        <span class="status-label">Confidence</span>
+                                        <span class="status-value" id="quantvm-confidence">85%</span>
+                                    </div>
+                                </div>
+                                <div class="quantvm-command">
+                                    <input type="text" id="quantvm-input" class="quantum-input" placeholder="Ask QUANTVM anything...">
+                                    <button class="quantum-btn send-btn" id="send-command">
+                                        <span class="btn-icon">⚡</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity Card -->
+                        <div class="quantum-card activity-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Recent Activity</h3>
+                                <div class="card-icon">📈</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="activity-list" id="activity-list">
+                                    <div class="activity-item">
+                                        <span class="activity-time">12:34</span>
+                                        <span class="activity-text">System initialized</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Biome Panel -->
+                <div class="content-panel" id="biome-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">🌿 File Biome</h2>
+                        <div class="panel-actions">
+                            <button class="quantum-btn" id="refresh-biome">
+                                <span class="btn-icon">🔄</span>
+                                <span class="btn-text">Refresh</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="biome-visualization">
+                        <div class="biome-canvas-container">
+                            <canvas id="biome-canvas" class="biome-canvas"></canvas>
+                        </div>
+                        <div class="biome-controls">
+                            <div class="control-group">
+                                <label class="control-label">Visualization Type</label>
+                                <select class="quantum-select" id="biome-view">
+                                    <option value="network">Network</option>
+                                    <option value="tree">Tree</option>
+                                    <option value="heatmap">Heatmap</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Filter</label>
+                                <select class="quantum-select" id="biome-filter">
+                                    <option value="all">All Files</option>
+                                    <option value="recent">Recent</option>
+                                    <option value="large">Large Files</option>
+                                    <option value="old">Old Files</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizer Panel -->
+                <div class="content-panel" id="organizer-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">📁 File Organizer</h2>
+                        <div class="panel-actions">
+                            <button class="quantum-btn" id="scan-directory">
+                                <span class="btn-icon">🔍</span>
+                                <span class="btn-text">Scan Directory</span>
+                            </button>
+                            <button class="quantum-btn primary" id="organize-files">
+                                <span class="btn-icon">🧹</span>
+                                <span class="btn-text">Organize Files</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="organizer-content">
+                        <div class="directory-selector">
+                            <label class="selector-label">Target Directory</label>
+                            <div class="selector-input">
+                                <input type="text" id="directory-path" class="quantum-input" placeholder="Select directory to organize...">
+                                <button class="quantum-btn" id="browse-directory">
+                                    <span class="btn-icon">📂</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="organization-options">
+                            <div class="option-group">
+                                <label class="option-label">Organization Strategy</label>
+                                <select class="quantum-select" id="org-strategy">
+                                    <option value="type">By File Type</option>
+                                    <option value="category">By Category</option>
+                                    <option value="date">By Date</option>
+                                    <option value="size">By Size</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label class="option-label">Options</label>
+                                <div class="checkbox-group">
+                                    <label class="quantum-checkbox">
+                                        <input type="checkbox" id="create-backup" checked>
+                                        <span class="checkmark"></span>
+                                        Create Backup
+                                    </label>
+                                    <label class="quantum-checkbox">
+                                        <input type="checkbox" id="auto-rename">
+                                        <span class="checkmark"></span>
+                                        Auto Rename
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="file-preview" id="file-preview">
+                            <h3 class="preview-title">File Preview</h3>
+                            <div class="preview-list" id="preview-list">
+                                <!-- File preview items will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Panel -->
+                <div class="content-panel" id="security-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">🛡️ Security Guardian</h2>
+                        <div class="panel-actions">
+                            <button class="quantum-btn" id="security-scan">
+                                <span class="btn-icon">🔍</span>
+                                <span class="btn-text">Full Scan</span>
+                            </button>
+                            <button class="quantum-btn warning" id="self-defense">
+                                <span class="btn-icon">🚨</span>
+                                <span class="btn-text">Self Defense</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="security-content">
+                        <div class="security-overview">
+                            <div class="security-card">
+                                <h3 class="card-title">System Security</h3>
+                                <div class="security-meter">
+                                    <div class="meter-circle">
+                                        <svg class="security-svg" viewBox="0 0 100 100">
+                                            <circle class="security-bg" cx="50" cy="50" r="40"></circle>
+                                            <circle class="security-fill" cx="50" cy="50" r="40" id="security-fill"></circle>
+                                        </svg>
+                                        <span class="security-value" id="security-value">100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="security-stats">
+                                <div class="stat-card">
+                                    <span class="stat-number" id="cloaked-files">0</span>
+                                    <span class="stat-label">Cloaked Files</span>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-number" id="alerts-count">0</span>
+                                    <span class="stat-label">Alerts</span>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-number" id="backups-count">0</span>
+                                    <span class="stat-label">Backups</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="security-actions">
+                            <div class="action-group">
+                                <h3 class="group-title">File Protection</h3>
+                                <div class="action-buttons">
+                                    <button class="quantum-btn" id="cloak-file">
+                                        <span class="btn-icon">🔐</span>
+                                        <span class="btn-text">Cloak File</span>
+                                    </button>
+                                    <button class="quantum-btn" id="create-backup">
+                                        <span class="btn-icon">💾</span>
+                                        <span class="btn-text">Create Backup</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="action-group">
+                                <h3 class="group-title">Monitoring</h3>
+                                <div class="action-buttons">
+                                    <button class="quantum-btn" id="monitor-processes">
+                                        <span class="btn-icon">👁️</span>
+                                        <span class="btn-text">Monitor Processes</span>
+                                    </button>
+                                    <button class="quantum-btn" id="network-monitor">
+                                        <span class="btn-icon">🌐</span>
+                                        <span class="btn-text">Network Monitor</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="security-logs" id="security-logs">
+                            <h3 class="logs-title">Security Logs</h3>
+                            <div class="logs-container" id="logs-container">
+                                <!-- Security logs will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification-container" id="notification-container"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Initializing QUANTVM Core...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/biome-visualization.js"></script>
+</body>
+</html> 

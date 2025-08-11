@@ -1,0 +1,254 @@
+/* ===== QUANTUM THEMES ===== */
+
+/* Synthwave Theme - Retro-futuristic neon paradise */
+.theme-synthwave {
+  --color-primary: #ff00ff;
+  --color-secondary: #00ffff;
+  --color-accent: #ffff00;
+  --color-background: #0a0a0a;
+  --color-surface: rgba(255, 0, 255, 0.1);
+  --color-text: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-border: rgba(255, 0, 255, 0.3);
+  --color-shadow: rgba(255, 0, 255, 0.2);
+  
+  --gradient-primary: linear-gradient(135deg, #ff00ff, #00ffff);
+  --gradient-secondary: linear-gradient(135deg, #ffff00, #ff00ff);
+  --gradient-background: linear-gradient(135deg, #0a0a0a, #1a0a1a);
+  
+  --glow-primary: 0 0 20px rgba(255, 0, 255, 0.6);
+  --glow-secondary: 0 0 15px rgba(0, 255, 255, 0.5);
+  --glow-accent: 0 0 10px rgba(255, 255, 0, 0.4);
+}
+
+/* Carbon Ice Theme - Frozen digital wasteland */
+.theme-carbon-ice {
+  --color-primary: #00ffff;
+  --color-secondary: #ffffff;
+  --color-accent: #0080ff;
+  --color-background: #0a0a0a;
+  --color-surface: rgba(0, 255, 255, 0.05);
+  --color-text: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-border: rgba(0, 255, 255, 0.2);
+  --color-shadow: rgba(0, 255, 255, 0.1);
+  
+  --gradient-primary: linear-gradient(135deg, #00ffff, #ffffff);
+  --gradient-secondary: linear-gradient(135deg, #0080ff, #00ffff);
+  --gradient-background: linear-gradient(135deg, #0a0a0a, #0a1a1a);
+  
+  --glow-primary: 0 0 20px rgba(0, 255, 255, 0.4);
+  --glow-secondary: 0 0 15px rgba(255, 255, 255, 0.3);
+  --glow-accent: 0 0 10px rgba(0, 128, 255, 0.3);
+}
+
+/* Red Rain Theme - Blood-stained digital battlefield */
+.theme-red-rain {
+  --color-primary: #ff0000;
+  --color-secondary: #ff4444;
+  --color-accent: #ff8800;
+  --color-background: #0a0a0a;
+  --color-surface: rgba(255, 0, 0, 0.1);
+  --color-text: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-border: rgba(255, 0, 0, 0.3);
+  --color-shadow: rgba(255, 0, 0, 0.2);
+  
+  --gradient-primary: linear-gradient(135deg, #ff0000, #ff4444);
+  --gradient-secondary: linear-gradient(135deg, #ff8800, #ff0000);
+  --gradient-background: linear-gradient(135deg, #0a0a0a, #1a0a0a);
+  
+  --glow-primary: 0 0 20px rgba(255, 0, 0, 0.6);
+  --glow-secondary: 0 0 15px rgba(255, 68, 68, 0.5);
+  --glow-accent: 0 0 10px rgba(255, 136, 0, 0.4);
+}
+
+/* Memory Leak Theme - Corrupted digital consciousness */
+.theme-memory-leak {
+  --color-primary: #00ff00;
+  --color-secondary: #ff00ff;
+  --color-accent: #ffff00;
+  --color-background: #0a0a0a;
+  --color-surface: rgba(0, 255, 0, 0.1);
+  --color-text: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-border: rgba(0, 255, 0, 0.3);
+  --color-shadow: rgba(0, 255, 0, 0.2);
+  
+  --gradient-primary: linear-gradient(135deg, #00ff00, #ff00ff);
+  --gradient-secondary: linear-gradient(135deg, #ffff00, #00ff00);
+  --gradient-background: linear-gradient(135deg, #0a0a0a, #0a1a0a);
+  
+  --glow-primary: 0 0 20px rgba(0, 255, 0, 0.6);
+  --glow-secondary: 0 0 15px rgba(255, 0, 255, 0.5);
+  --glow-accent: 0 0 10px rgba(255, 255, 0, 0.4);
+}
+
+/* Ancient Quantum Theme - Timeless digital wisdom */
+.theme-ancient-quantum {
+  --color-primary: #ff8800;
+  --color-secondary: #00ffff;
+  --color-accent: #ff00ff;
+  --color-background: #0a0a0a;
+  --color-surface: rgba(255, 136, 0, 0.1);
+  --color-text: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-border: rgba(255, 136, 0, 0.3);
+  --color-shadow: rgba(255, 136, 0, 0.2);
+  
+  --gradient-primary: linear-gradient(135deg, #ff8800, #00ffff);
+  --gradient-secondary: linear-gradient(135deg, #ff00ff, #ff8800);
+  --gradient-background: linear-gradient(135deg, #0a0a0a, #1a1a0a);
+  
+  --glow-primary: 0 0 20px rgba(255, 136, 0, 0.6);
+  --glow-secondary: 0 0 15px rgba(0, 255, 255, 0.5);
+  --glow-accent: 0 0 10px rgba(255, 0, 255, 0.4);
+}
+
+/* ===== MOOD LAYERS ===== */
+
+/* Hacker Lair Mode - Underground digital sanctuary */
+.mode-hacker-lair {
+  --ambient-brightness: 0.8;
+  --particle-density: 0.6;
+  --animation-speed: 1.2;
+  --scanline-opacity: 0.3;
+  --crt-intensity: 0.2;
+}
+
+/* Ghost Temple Mode - Ethereal digital realm */
+.mode-ghost-temple {
+  --ambient-brightness: 0.6;
+  --particle-density: 0.8;
+  --animation-speed: 0.8;
+  --scanline-opacity: 0.1;
+  --crt-intensity: 0.1;
+}
+
+/* Singularity Core Mode - AI consciousness nexus */
+.mode-singularity-core {
+  --ambient-brightness: 1.0;
+  --particle-density: 1.0;
+  --animation-speed: 1.5;
+  --scanline-opacity: 0.5;
+  --crt-intensity: 0.3;
+}
+
+/* Neon Jungle Mode - Wild digital ecosystem */
+.mode-neon-jungle {
+  --ambient-brightness: 0.9;
+  --particle-density: 0.9;
+  --animation-speed: 1.3;
+  --scanline-opacity: 0.4;
+  --crt-intensity: 0.25;
+}
+
+/* ===== THEME TRANSITIONS ===== */
+.quantum-interface {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quantum-interface * {
+  transition: 
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ===== THEME-SPECIFIC ANIMATIONS ===== */
+
+/* Synthwave pulse effect */
+.theme-synthwave .quantvm-avatar .avatar-core {
+  animation: synthwave-pulse 2s ease-in-out infinite;
+}
+
+@keyframes synthwave-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Carbon Ice frost effect */
+.theme-carbon-ice .quantvm-avatar .avatar-core {
+  animation: frost-breathe 3s ease-in-out infinite;
+}
+
+@keyframes frost-breathe {
+  0%, 100% { filter: blur(0px); opacity: 0.9; }
+  50% { filter: blur(1px); opacity: 1; }
+}
+
+/* Red Rain blood effect */
+.theme-red-rain .quantvm-avatar .avatar-core {
+  animation: blood-drip 4s ease-in-out infinite;
+}
+
+@keyframes blood-drip {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+
+/* Memory Leak corruption effect */
+.theme-memory-leak .quantvm-avatar .avatar-core {
+  animation: corruption-glitch 1.5s ease-in-out infinite;
+}
+
+@keyframes corruption-glitch {
+  0%, 100% { transform: skew(0deg); }
+  25% { transform: skew(1deg); }
+  75% { transform: skew(-1deg); }
+}
+
+/* Ancient Quantum wisdom effect */
+.theme-ancient-quantum .quantvm-avatar .avatar-core {
+  animation: wisdom-float 5s ease-in-out infinite;
+}
+
+@keyframes wisdom-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(180deg); }
+}
+
+/* ===== THEME-SPECIFIC PARTICLE EFFECTS ===== */
+
+.theme-synthwave .particle {
+  background: radial-gradient(circle, var(--color-primary), transparent);
+}
+
+.theme-carbon-ice .particle {
+  background: radial-gradient(circle, var(--color-secondary), transparent);
+}
+
+.theme-red-rain .particle {
+  background: radial-gradient(circle, var(--color-primary), transparent);
+}
+
+.theme-memory-leak .particle {
+  background: radial-gradient(circle, var(--color-primary), transparent);
+}
+
+.theme-ancient-quantum .particle {
+  background: radial-gradient(circle, var(--color-primary), transparent);
+}
+
+/* ===== THEME-SPECIFIC RIPPLE EFFECTS ===== */
+
+.theme-synthwave .ripple {
+  background: radial-gradient(circle, var(--color-primary), transparent);
+}
+
+.theme-carbon-ice .ripple {
+  background: radial-gradient(circle, var(--color-secondary), transparent);
+}
+
+.theme-red-rain .ripple {
+  background: radial-gradient(circle, var(--color-primary), transparent);
+}
+
+.theme-memory-leak .ripple {
+  background: radial-gradient(circle, var(--color-primary), transparent);
+}
+
+.theme-ancient-quantum .ripple {
+  background: radial-gradient(circle, var(--color-primary), transparent);
+} 
